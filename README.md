@@ -6,4 +6,4 @@
 * [隐式类型转换](./javascript/隐式类型转换.md)
 * [原型](./javascript/原型.md)
 
-test
+AAAA
