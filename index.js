@@ -1,34 +1,27 @@
-console.log(1);
-setTimeout(() => {
-  console.log(2);
-  process.nextTick(() => {
-    console.log(3);
-  });
-  new Promise((resolve) => {
-    console.log(4);
-    resolve();
-  }).then(() => {
-    console.log(5);
-  });
-});
+console.log("script start");
+
+async function async1() {
+  await async2();
+  console.log("async1 end");
+}
+async function async2() {
+  console.log("async2 end");
+}
+async1();
+
+setTimeout(function () {
+  console.log("setTimeout");
+}, 0);
+
 new Promise((resolve) => {
-  console.log(7);
+  console.log("Promise");
   resolve();
-}).then(() => {
-  console.log(8);
-});
-process.nextTick(() => {
-  console.log(6);
-});
-setTimeout(() => {
-  console.log(9);
-  process.nextTick(() => {
-    console.log(10);
+})
+  .then(function () {
+    console.log("promise1");
+  })
+  .then(function () {
+    console.log("promise2");
   });
-  new Promise((resolve) => {
-    console.log(11);
-    resolve();
-  }).then(() => {
-    console.log(12);
-  });
-});
+
+console.log("script end");
