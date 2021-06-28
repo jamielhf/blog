@@ -1,6 +1,8 @@
 # eventLoop
 
-##
+## 流程图
+
+![img](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2baaf009636748c491898aafeceddb32~tplv-k3u1fbpfcp-watermark.image)
 
 ### 宏任务和微任务
 
@@ -40,5 +42,6 @@ Node 11.x 新变化
 
 ## 相关
 
-<https://github.com/lgwebdream/FE-Interview/issues/37>
+<https://github.com/lgwebdream/FE-Interview/issues/37>  
+<https://juejin.cn/post/6844903988584775693#heading-8>  
 <https://github.com/dwqs/blog/issues/61>

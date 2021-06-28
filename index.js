@@ -1,27 +1,16 @@
-console.log("script start");
+// 引入我们的 MyPromise.js
+const MyPromise = require("./MyPromise");
+const promise = new MyPromise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("success");
+  }, 1000);
+});
 
-async function async1() {
-  await async2();
-  console.log("async1 end");
-}
-async function async2() {
-  console.log("async2 end");
-}
-async1();
-
-setTimeout(function () {
-  console.log("setTimeout");
-}, 0);
-
-new Promise((resolve) => {
-  console.log("Promise");
-  resolve();
-})
-  .then(function () {
-    console.log("promise1");
-  })
-  .then(function () {
-    console.log("promise2");
-  });
-
-console.log("script end");
+promise.then(
+  (value) => {
+    console.log("resolve", value);
+  },
+  (reason) => {
+    console.log("reject", reason);
+  }
+);
